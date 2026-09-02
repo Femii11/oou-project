@@ -18,17 +18,28 @@
     <meta name="twitter:description" content="Calculate your OOU Aggregate Score with zero stress.">
     <meta name="twitter:image"
         content="https://oou-aggregate-calculator-rose.vercel.app/OOU-Favicon-removebg-preview.png">
+    <meta name="author" content="Femii">
+    <meta property="article:author" content="FEMII_DEV">
     <style>
+        * {
+
+            html,
+            body {
+                box-sizing: border-box;
+            }
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-
-
+            background-color: white;
             padding: 10px;
             margin: 0;
-
-
             align-items: center;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(OOU-Favicon-removebg-preview.png);
+            background-repeat: repeat;
+            background-size: 200px;
+            background-position: center;
 
         }
 
@@ -90,8 +101,11 @@
         }
 
         .contact a {
-            color: #64748B;
+            color: #5476a7;
             text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+
         }
 
         .contact a:hover {
@@ -167,8 +181,8 @@
     </div>
     <br>
     <footer>
-        <p> &lt;&lt;&lt; &copy; 2026 Femii All rights reserved &gt;&gt;&gt;</p>
         <p class="contact"><a href="https://wa.me/2349045132271" target="_blank">Contact Developer</a></p>
+        <p> &lt;&lt;&lt; &copy; 2026 Femii All rights reserved &gt;&gt;&gt;</p>
     </footer>
     <!--JAVASCRIPT calculation code-->
     <script>
@@ -202,7 +216,7 @@
 
 
             // Display the result
-            result.style.color = 'green';
+            result.style.color = 'blue';
             result.innerHTML = `Your Aggregate Score is: <span>${aggregate.toFixed(2)}%</span>`;
 
 
