@@ -100,17 +100,51 @@
             box-shadow: 0 6px 15px rgba(34, 197, 94, 0.2);
         }
 
-        .contact a {
-            color: #5476a7;
-            text-decoration: none;
-            font-size: 1rem;
+        .img {
+            width: 30px;
+            height: 30px;
+            object-fit: cover;
+            padding: 5px;
+            transition: transition-duration: 1s;
+        }
+
+        .img:hover {
+            transform: scale(1.2);
+            transition: transform 0.3s ease;
+        }
+
+        .spans {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            margin: 0 auto;
+            position: relative;
+            top: -40px;
+            width: 100px;
+            height: 40px;
+            border-left: 2px solid #3f4c96;
+            border-right: 2px solid #3f4c96;
+            border-top: 2px solid #020725;
+            border-bottom: 2px solid #020725;
+            border-radius: 10px;
+
+        }
+
+        .span {
+            border-bottom: 2px solid #3f4c96;
+            height: 15px;
+            width: 250px;
+            position: relative;
+            text-align: center;
+            margin: 0 auto;
+            margin-bottom: 10px;
+            top: -40px;
             font-weight: bold;
-
+            color: #3445a5;
         }
 
-        .contact a:hover {
-            text-decoration: underline;
-        }
+
 
         .jam {
             height: 20px;
@@ -181,7 +215,15 @@
     </div>
     <br>
     <footer>
-        <p class="contact"><a href="https://wa.me/2349045132271" target="_blank">Contact Developer</a></p>
+        <div class="span">
+            <p class="contact">Contact Developer</p>
+        </div>
+        <div class="spans">
+            <p><a href="https://wa.me/2349045132271" target="_blank"><img src="whatsapp-icon-logo-svgrepo-com.svg"
+                        alt="whatsapp icon" class="img"></a></p>
+            <p><a href="https://wa.me/2349045132271" target="_blank"><img src="telegram-svgrepo-com (1).svg"
+                        alt="telegram icon" class="img"></a></p>
+        </div>
         <p> &lt;&lt;&lt; &copy; 2026 Femii All rights reserved &gt;&gt;&gt;</p>
     </footer>
     <!--JAVASCRIPT calculation code-->
