@@ -17,10 +17,17 @@
     <meta name="twitter:url" content="https://oou-aggregate-calculator-rose.vercel.app/">
     <meta name="twitter:title" content="OOU Aggregate Calculator">
     <meta name="twitter:description" content="Calculate your OOU Aggregate Score with zero stress.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://googleapis.com" rel="stylesheet">
     <meta name="twitter:image"
         content="https://oou-aggregate-calculator-rose.vercel.app/OOU-Favicon-removebg-preview.png">
     <meta name="author" content="Femii">
     <meta property="article:author" content="FEMII_DEV">
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
     <style>
         * {
 
@@ -31,7 +38,7 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
             margin: 0;
             background-color: white;
             padding: 10px;
@@ -89,6 +96,7 @@
 
         button {
             transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+            font-weight: 600;
         }
 
         button:hover {
@@ -106,7 +114,7 @@
             height: 30px;
             object-fit: cover;
             padding: 5px;
-            transition: transition-duration: 1s;
+            transition-duration: 1s;
         }
 
         .img:hover {
@@ -129,7 +137,8 @@
             border-top: 4px double #020725;
             border-bottom: 4px double #020725;
             border-radius: 10px;
-
+            padding-left: 10px;
+            padding-right: 10px;
         }
 
         .span {
@@ -143,6 +152,7 @@
             top: -40px;
             font-weight: bold;
             color: #3445a5;
+            padding-bottom: 5px;
         }
 
 
@@ -166,6 +176,11 @@
         .jam:focus {
             max-width: 260px;
             box-shadow: inset 0 0 5px #3f4c96, 0 0 10px #3f4c96;
+        }
+
+        h1,
+        h2 {
+            font-weight: 700;
         }
     </style>
 </head>
@@ -219,10 +234,13 @@
             <p class="contact">Contact Developer</p>
         </div>
         <div class="spans">
-            <p><a href="https://wa.me/2349045132271" target="_blank"><img src="whatsapp-icon-logo-svgrepo-com.svg"
-                        alt="whatsapp icon" class="img"></a></p>
-            <p><a href="https://t.me/f_emii11" target="_blank"><img src="telegram-svgrepo-com (1).svg"
-                        alt="telegram icon" class="img"></a></p>
+            <a href="https://wa.me/2349045132271" target="_blank"><img src="whatsapp-icon-logo-svgrepo-com.svg"
+                    alt="whatsapp icon" class="img"></a>
+            <a href="https://t.me/f_emii11" target="_blank"><img src="telegram-svgrepo-com (1).svg" alt="telegram icon"
+                    class="img"></a>
+            <a href="https://x.com/femii_dev" target="_blank"><img src="icons8-x.svg" alt="twitter icon"
+                    class="img"></a>
+
         </div>
         <p> &lt;&lt;&lt; &copy; 2026 Femii All rights reserved &gt;&gt;&gt;</p>
     </footer>
@@ -256,12 +274,24 @@
             // POST UTME contributes 40% to the aggregate
             const aggregate = jambcontribution + utmecontribution;
 
+            if (aggregate >= 70) {
+                rating = "Excellent";
+                ratingColor = "#2e7d32"; // Green
+            } else if (aggregate >= 50) {
+                rating = "Very Good";
+                ratingColor = "#1565c0"; // Blue
+            } else if (aggregate >= 40) {
+                rating = "Good";
+                ratingColor = "#ed6c02"; // Orange
+            } else {
+                rating = "To Low";
+                ratingColor = "red"; // Red
+            }
 
             // Display the result
             result.style.color = 'blue';
-            result.innerHTML = `Your Aggregate Score is: <span>${aggregate.toFixed(2)}%</span>`;
-
-
+            result.innerHTML = `Your Aggregate Score is: <span style="color: blue; font-weight: bold;">${aggregate.toFixed(2)}%</span><br>` +
+                `Performance: <strong style="color: ${ratingColor};">${rating}</strong>`;
         });    
     </script>
 </body>
