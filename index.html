@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> OOU Aggregate Calculator </title>
     <link rel="icon" type="image/x-icon" href="OOU-Favicon-removebg-preview.png">
+    <link rel="stylesheet" href="style.css">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://oou-aggregate-calculator-rose.vercel.app/">
     <meta property="og:title" content="OOU Aggregate Calculator">
@@ -24,172 +25,20 @@
         content="https://oou-aggregate-calculator-rose.vercel.app/OOU-Favicon-removebg-preview.png">
     <meta name="author" content="Femii">
     <meta property="article:author" content="FEMII_DEV">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=BenchNine:wght@300;400;700&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
     <script>
         window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
-    <style>
-        * {
-
-            html,
-            body {
-                box-sizing: border-box;
-            }
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            background-color: white;
-            padding: 10px;
-            margin: 0;
-            align-items: center;
-            background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(OOU-Favicon-removebg-preview.png);
-            background-repeat: repeat;
-            background-size: 200px;
-            background-position: center;
-
-        }
-
-
-
-        header {
-            background-color: #0A2540;
-            border-radius: 20px;
-            padding-bottom: 1px;
-            padding: 25PX 20PX;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            box-sizing: border-box;
-        }
-
-        main {
-            background-color: #1E293B;
-            padding: 1px;
-            border-radius: 20px;
-            margin-bottom: 15px;
-            margin-top: 20px;
-            text-align: center;
-            box-sizing: border-box;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-
-
-
-
-        }
-
-        #result {
-            margin-top: 25px;
-            padding: 20px;
-        }
-
-        footer {
-            margin-top: auto;
-            padding-top: 30px;
-            text-align: center;
-            color: #64748B;
-            font-size: 0.85rem;
-        }
-
-        button {
-            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-            font-weight: 600;
-        }
-
-        button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(34, 197, 94, 0.4);
-        }
-
-        button :active {
-            transform: translateY(1px);
-            box-shadow: 0 6px 15px rgba(34, 197, 94, 0.2);
-        }
-
-        .img {
-            width: 30px;
-            height: 30px;
-            object-fit: cover;
-            padding: 5px;
-            transition-duration: 1s;
-            justify-self: center;
-            display: flex;
-        }
-
-        .img:hover {
-            transform: scale(1.2);
-            transition: transform 0.3s ease;
-        }
-
-        .spans {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            align-content: center;
-            flex-direction: row;
-            margin: 0 auto;
-            position: relative;
-            top: -40px;
-            width: 100px;
-            height: 40px;
-            border-left: 2px solid #3f4c96;
-            border-right: 2px solid #3f4c96;
-            border-top: 4px double #020725;
-            border-bottom: 4px double #020725;
-            border-radius: 10px;
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-
-        .span {
-            border-bottom: 2px solid #3f4c96;
-            height: 15px;
-            width: 250px;
-            position: relative;
-            text-align: center;
-            margin: 0 auto;
-            margin-bottom: 10px;
-            top: -40px;
-            font-weight: bold;
-            color: #3445a5;
-            padding-bottom: 5px;
-        }
-
-
-
-        .jam {
-            height: 20px;
-            background-color: #FFFFFF;
-            color: #0F172A;
-            padding: 10px;
-            font-size: 1rem;
-            width: 80%;
-            max-width: 250px;
-            margin-bottom: 15px;
-            outline: none;
-            text-align: center;
-            border-radius: 10px;
-            border: 2px solid #3f4c96;
-            transition-duration: 0.5s;
-        }
-
-        .jam:focus {
-            max-width: 260px;
-            box-shadow: inset 0 0 5px #3f4c96, 0 0 10px #3f4c96;
-        }
-
-        h1,
-        h2 {
-            font-weight: 700;
-        }
-    </style>
 </head>
 
 <body>
     <header style="margin-bottom: 5px;">
+
         <div>
             <span
                 style="display: flex; justify-content: center; align-items: center; margin-bottom: 10px; width: 100px; height: 100px; border-radius: 50%;   margin-left: auto; margin-right: auto; background: white;">
@@ -247,56 +96,7 @@
         </div>
         <p> &lt;&lt;&lt; &copy; 2026 Femii All rights reserved &gt;&gt;&gt;</p>
     </footer>
-    <!--JAVASCRIPT calculation code-->
-    <script>
-        document.getElementById('calcbtn').addEventListener('click', function () {
-            // Get value from JAMB inputs
-            const jamb = parseFloat(document.getElementById('jamb').value);
-
-            // Get value from post utme inputs
-            const utme = parseFloat(document.getElementById('utme').value);
-
-            // Get value from result inputs
-            const result = document.getElementById('result');
-
-            //input validation
-            if (isNaN(jamb) || isNaN(utme)) {
-                result.style.color = 'red';
-                result.textContent = "Please enter valid numeric values for JAMB and POST UTME scores";
-                return;
-            }
-            if (jamb < 0 || jamb > 400 || utme < 0 || utme > 100) {
-                result.style.color = 'red';
-                result.innerText = "Please enter valid scores: JAMB (0-400), POST UTME (0-100)";
-                return;
-            }
-            // Calculate the aggregate score
-            const jambcontribution = (jamb / 400) * 60;
-            // JAMB contributes 60% to the aggregate
-            const utmecontribution = (utme / 100) * 40;
-            // POST UTME contributes 40% to the aggregate
-            const aggregate = jambcontribution + utmecontribution;
-
-            if (aggregate >= 70) {
-                rating = "Excellent";
-                ratingColor = "#2e7d32"; // Green
-            } else if (aggregate >= 50) {
-                rating = "Very Good";
-                ratingColor = "#1565c0"; // Blue
-            } else if (aggregate >= 40) {
-                rating = "Good";
-                ratingColor = "#ed6c02"; // Orange
-            } else {
-                rating = "To Low";
-                ratingColor = "red"; // Red
-            }
-
-            // Display the result
-            result.style.color = 'blue';
-            result.innerHTML = `Your Aggregate Score is: <span style="color: blue; font-weight: bold;">${aggregate.toFixed(2)}%</span><br>` +
-                `Performance: <strong style="color: ${ratingColor};">${rating}</strong>`;
-        });    
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
